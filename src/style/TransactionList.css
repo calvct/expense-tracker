@@ -35,16 +35,16 @@
 /* HEADER STYLE */
 .table-header {
     background-color: #EBE7DE; /* Warna Header */
-    border-radius: 12px;
+    border-radius: 12px 12px 0 0;;
     font-weight: bold;
     color: #1c1c1e;
-overflow-x: auto;
+    overflow-x: auto;
 }
 
 /* ROW STYLE */
 .transaction-list-section {
-    border-bottom: 1px solid #eee; /* Garis pemisah pengganti <hr> */
-    
+    border-bottom: 1px solid #1c1c1e66; 
+    margin: 4px 0;/* Garis pemisah pengganti <hr> */
 }
 
 /* Isian Tabel */
@@ -112,4 +112,5 @@ overflow-x: auto;
 }   
 .scrollAble{
     overflow-x: auto;
+    scrollbar-width: none;
 }
