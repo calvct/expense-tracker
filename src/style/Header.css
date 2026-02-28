@@ -1,0 +1,47 @@
+.app-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+
+}
+.app-header h1{
+    color: #1c1c1e;
+    font-size: clamp(26px, 5vw, 57px);
+
+}
+.btn-add{
+    padding: 16px;
+    background-color: #1E1E1E;
+    font: 1rem 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+.header{
+    width: 100%;
+    margin-bottom: 16px;
+}
+.header hr{
+    margin: 1rem 1rem;
+}
+
+@media screen and (max-width: 640px) {
+
+    .btn-add{
+        padding: 12px;
+        font-size: 0.75rem;
+    }
+    .header hr{
+        margin: 8px 1rem; 
+    }
+}
+@media screen and (max-width: 500px) {
+
+    .btn-add{
+        padding: 8px;
+        font-size: 0.75rem;
+    }
+    .header hr{
+        margin: 8px 1rem;     
+}
+}

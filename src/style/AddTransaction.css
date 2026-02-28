@@ -1,0 +1,212 @@
+/* Background Gelap Transparan */
+.modal-overlay {
+    position: fixed; /* Kunci di layar */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Hitam transparan */
+    display: flex;
+    justify-content: center; /* Tengah Kiri-Kanan */
+    align-items: center;     /* Tengah Atas-Bawah */
+    z-index: 1000; /* Pastikan di paling depan */
+    backdrop-filter: blur(3px); /* Efek blur keren */
+    overflow: scroll;
+}
+
+/* Kotak Putih Modal */
+.modal-content {
+    background-color: #F5F1EB; /* Banana Cream */
+    width: 90%;
+    max-width: 500px;
+    border-radius: 12px;
+    padding: 32px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    animation: popUp 0.3s ease-out;
+}
+
+/* Header Modal Styles */
+.add-header {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    gap: 8px;
+    place-content: center;
+    margin-bottom: 84px;
+}
+
+.add-header h1 {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    color: #1c1c1e;
+    margin: 0;
+}
+
+/* Tombol Close (X) */
+.btn-close-icon {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #1c1c1e;
+    padding: 0;
+}
+.btn-close-icon svg{
+      width:clamp(30px, 5vw, 36px);
+      height:clamp(30px, 5vw, 36px);;
+}
+
+.btn-close-icon:hover {
+    color: #E06B6B; /* Merah saat hover */
+}
+
+/* Animasi Muncul */
+@keyframes popUp {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.add-amount{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #1c1c1e;
+    margin-bottom: 42px;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+.notes-section input{
+    background: transparent;
+    border: none;
+    width: 100%;
+    padding: 16px 8px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #1c1c1e;
+}
+.notes-section input::placeholder{
+    color: #1c1c1e;
+    opacity: 20%;
+}
+.notes-section input:focus{
+   outline: none;
+}
+
+.header-center {
+    grid-column: span 3 / span 3;
+}
+.header-right {
+    grid-column-start: 5;
+}
+
+.input-amount{
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 8px;
+    height: 100%;
+}
+.input-amount h2{
+    font-size: 32px;
+}
+.amount-input{
+    background: transparent;
+    border: none;
+    font-size: 2rem;
+    field-sizing: content;
+    color: #1c1c1e;
+    font-weight: bold;
+    min-width: 120px;
+    padding: 0;
+}
+.amount-input::placeholder{
+    color: #1c1c1e;
+    opacity: 20%;
+}
+.amount-input:focus{
+    outline: none;
+}
+.select-wrapper{
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    width: 100%;
+    border-radius: 8px;
+    padding: 8px;
+}
+.category-list h4{
+    color: #1c1c1e;
+    opacity: 70%;
+    font-size: 11px;
+    padding: 0 8px;
+}
+
+#select-category {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%;
+    padding: 8px;
+    border: none;
+    background-color: transparent;
+    font-size: 14px;
+    cursor: pointer;
+    color: #1c1c1e;
+    font-weight: bold;
+    text-indent: 0;
+    z-index: 1;
+    position: relative;
+}
+#select-category:focus{
+    outline: none;
+}
+.category-list{
+    position: relative; /* Jadi patokan koordinat */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 8px;
+    margin-bottom: 16px;
+}
+.icon-overlay {
+    position: absolute; 
+    right: 16px;        
+    top: 50%;          
+    transform: translateY(-50%);
+    
+    color: #1c1c1e;  
+    /* font-weight: bold; */
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+}
+.notes-section{
+    position: relative; /* Jadi patokan koordinat */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 8px;
+    margin-bottom: 84px;
+}
+
+
+.btn-submit{
+    width: 100%;
+    background-color: #FFFFFF;
+    color: #1c1c1e;
+    font-size: 18px;
+    font-weight: bold;
+    border: 1px solid black;
+}
+.btn-submit:disabled {
+    background-color: #d5d3ce; /* Warna cream pucat */
+    color: #ebe7df;            /* Teks cokelat pudar */
+    cursor: not-allowed;       /* Kursor berubah jadi tanda coret */
+    box-shadow: none;          /* Hilangkan bayangan */
+    transform: none;           /* Hilangkan efek membesar/naik saat di-hover */
+}

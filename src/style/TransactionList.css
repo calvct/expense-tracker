@@ -1,0 +1,115 @@
+/* CONTAINER UTAMA */
+.transaction-list {
+    background-color: #fff;
+    padding: 16px;
+    border-radius: 16px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    width: 100%;
+    color: #1c1c1e;
+    /* 👇 PENTING: Agar bisa di-scroll ke samping kalau layar sempit (HP) */
+    
+    /* -webkit-overflow-scrolling: touch; */
+    text-align: left;
+}
+
+.transaction-list h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #1c1c1e;
+    margin-bottom: 16px;
+}
+
+.grid-layout {
+    display: grid;
+    
+    grid-template-columns: 120px 1.5fr 1fr 1fr 100px;
+    
+    gap: 16px;
+    align-items: center;
+    padding: 12px 6px;
+    
+    min-width: 650px; 
+    text-align: center;
+}
+
+/* HEADER STYLE */
+.table-header {
+    background-color: #EBE7DE; /* Warna Header */
+    border-radius: 12px;
+    font-weight: bold;
+    color: #1c1c1e;
+overflow-x: auto;
+}
+
+/* ROW STYLE */
+.transaction-list-section {
+    border-bottom: 1px solid #eee; /* Garis pemisah pengganti <hr> */
+    
+}
+
+/* Isian Tabel */
+.col p, .col {
+    margin: 0;
+    font-size: 14px;
+    white-space: nowrap; /* Teks dilarang turun baris */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Kalau kepanjangan jadi "..." */
+    text-transform: capitalize;
+}
+
+
+
+/* STYLE TOMBOL ACTION */
+.action-buttons {
+    display: flex;
+    justify-content: center; /* Tombol rata tengah */
+    gap: 8px; /* Jarak antar tombol */
+}
+
+.btn-icon {
+    border: 1px solid #1c1c1e;
+    background: white;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    padding: 8px 12px;
+    color: #1c1c1e;
+}
+
+.btn-icon:hover {
+    background-color: #1c1c1e;
+    color: white;
+}
+
+.category-p{
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.tables{
+    max-height: 380px;
+    overflow-y: auto;
+}
+/********** RESPONSIVE DESIGN **********/
+@media screen and (max-width: 640px) {
+    .grid-layout {
+        grid-template-columns: 100px 1.5fr 1fr 1fr 80px;
+        min-width: 500px; /* Sesuaikan dengan kebutuhan */
+    }
+    .col p, .col {
+        font-size: 12px;
+    }
+    .btn-icon {
+        padding: 6px 10px;
+    }
+    .tables{
+        max-height: max-content;
+        overflow-y: visible;
+    }
+}   
+.scrollAble{
+    overflow-x: auto;
+}

@@ -1,0 +1,107 @@
+.balance-container{
+    display: flex;
+    flex-direction: column;
+    align-items:start;
+    justify-content: space-between;
+    padding: 16px;
+    background-color: #FFFFFF;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    color: #1c1c1e;
+}
+.balance-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.income-expense-container{
+    display: flex;
+    justify-content: space-between;
+    width: max-content;
+    margin-top: 16px;
+    gap: 16px;
+}
+.income-box{
+display:flex;
+flex-direction: column;
+background-color: #FFFFFF;
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), 0 2px 0px #1a745cA7;
+border-radius: 8px;
+padding: 4px;
+width: max-content;
+height: fit-content;
+min-width: 120px;
+gap: 8px;
+}
+.income-box h3, .expense-box h3{
+    font-size: 15px;
+    margin:0;
+}
+.income-box p{
+    font-size: 16;
+    font-weight: bold;
+    color: #1a745c;
+    height: fit-content;
+    margin:0;
+}
+.expense-box p{
+    font-size: 16;
+    font-weight: bold;
+    color: #E06B6B;
+    margin: 0;
+}
+.expense-box{
+display:flex;
+flex-direction: column;
+background-color: #FFFFFF;
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), 0 2px 0px #E06B6BA7;
+border-radius: 8px;
+padding: 4px;
+width: max-content;
+height: fit-content;
+min-width: 120px;
+gap: 8px;
+}
+
+.balance-container hr{
+    width: 100%;
+    border: none;
+    border-top: 1px solid #E0E0E0;
+}
+.note{
+    color: #1a745c;
+    margin: 0;
+    padding:8px 0;
+}
+.balance-header h2{
+    font-size: clamp(12px, 5vw, 24px);
+    margin: 0;
+}
+#balance-amount{
+    font-size: 40px;
+    font-weight: bold;
+    margin: 0;
+    /* margin-top: 16px; */
+}
+.daily-avg{
+    font-size: 15px;
+    font-weight: bold;
+    margin: 0;
+    margin-top: 32px;
+    opacity: 0.6;
+}
+
+#select-month{
+    font-size: 15px;
+    background-color: #1c1c1e;
+    color: #FFFFFF;
+    padding: 8px;
+}
+
+@media screen and (max-width: 500px) {
+    #balance-amount{
+    margin-top: 16px
+    }
+}

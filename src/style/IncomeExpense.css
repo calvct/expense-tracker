@@ -1,0 +1,74 @@
+.summary-container{
+    height: fit-content;
+    color: #1c1c1e;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px;
+    background-color: #FFFFFF;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.image-icon{
+    width: fit-content;
+    height: fit-content;
+}
+.list-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.list-header{
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+.summary-container h1{
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 16px;
+
+}
+.summary-container hr{
+    width: 100%;
+border: none;
+border-top: 1px solid #000000A4;
+}
+/* CategorySummary.css */
+.list-container {
+    display: flex;
+    justify-content: space-between; /* Biar harga mentok ke kanan */
+    align-items: center; /* Biar vertikal tengah */
+    margin-bottom: 4px;
+}
+
+.lists {
+    width: 100%;
+    padding-bottom: 16px;
+}
+.list-amount {
+    font-weight: bold;
+    font-size: 16px;
+}
+.list-header p{
+    font-size: 16px;
+}
+.total-amount{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 16px 0;
+}
+.lists:nth-last-child(2){
+padding-bottom: 0px;
+}
+.total-amount p{
+    font-size: 18px;
+}
+.total-amount h3, p{
+    margin: 0;
+}

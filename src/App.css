@@ -1,0 +1,103 @@
+#root {
+  width: 100%;
+  max-width: 1440px; /* Batasi lebar agar tidak terlalu melar di layar ultrawide */
+  margin: 0 auto;    /* Posisi tengah */
+  padding: 1.5rem;
+  background-color: #F5F1EB;
+  min-height: auto;
+  box-sizing: border-box; /* Agar padding tidak menambah lebar total */
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #F5F1EB;
+}
+
+.card-section{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.data-section{
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 16px;
+}
+@media screen and (max-width: 1024px) {
+  
+  /* Layout Atas: Ubah jadi 2 Kolom */
+  .card-section {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Trik: Balance (Anak Pertama) dibuat lebar penuh */
+  .card-section > *:first-child {
+    grid-column: span 2;
+  }
+
+  /* Layout Bawah: Tumpuk jadi 1 Kolom agar tabel luas */
+  .data-section {
+    grid-template-columns: 1fr; 
+  }
+}
+
+/* B. HANDPHONE (Max Width: 768px) */
+/* ... kode sebelumnya ... */
+
+/* B. HANDPHONE (Max Width: 768px) */
+@media screen and (max-width: 768px) {
+  
+  #root {
+    padding: 8px; /* Kurangi padding root biar space konten lebih lega */
+  }
+
+  /* RESET SEMUA GRID JADI 1 KOLOM */
+  .card-section, 
+  .data-section {
+    display: flex;       /* Ganti Grid jadi Flex biar lebih aman di HP */
+    flex-direction: column; /* Tumpuk ke bawah */
+    gap: 20px;
+    width: 100%;         /* Pastikan lebar container tidak melebihi layar */
+  }
+
+  /* PASTIKAN ANAK-ANAKNYA GAK BANDEL */
+  .card-section > *, 
+  .data-section > * {
+    width: 100% !important; /* Paksa semua anak selebar layar HP */
+    max-width: 100%;        /* Jangan sampai lebih */
+    min-width: 0;           /* Trik agar Grid/Flex mau mengecil */
+  }
+}
