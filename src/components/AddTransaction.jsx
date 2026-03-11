@@ -54,22 +54,6 @@ function AddTransaction({ isOpen, onClose, onSave, dataToEdit }) {
             setNote('');
             onClose();
         }
-        // else{
-        //     const newTx = {
-        //         id: Date.now(),
-        //         date: getTodayDate(),
-        //         amount: realValue,
-        //         category: category,
-        //         notes: note.trim() === "" ? "-" : note
-        //     }
-        //     onSaveTransaction(newTx);
-        //     // Setelah submit, reset form dan tutup modal
-        //     setDisplayValue('');
-        //     setRealValue(0);
-        //     setCategory(CATEGORY_ENUM.FOOD);
-        //     setNote('');
-        //     onClose();
-        // }
     }
     // Kalau isOpen false (tutup), jangan tampilkan apa-apa
     if (!isOpen) return null;

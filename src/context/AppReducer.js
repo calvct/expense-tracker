@@ -29,3 +29,45 @@ export const getPastMonths = () => {
     }
     return months;
 };
+
+export const formatRupiah = (number) => {
+        return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(number);
+    }
+
+// Di dalam src/hooks/useTransactions.js
+
+import { useState, useEffect } from 'react';
+
+export function useTransactions() {
+    const [tx, setTransactions] = useState(() => {
+        const savedData = localStorage.getItem('expense-data');
+        return savedData ? JSON.parse(savedData) : [];
+    });
+
+    useEffect(() => {
+        localStorage.setItem('expense-data', JSON.stringify(tx));
+    }, [tx]);
+
+    // 👇 Dari handleSaveTransaction kamu
+    const saveTransaction = (savedTx) => {
+        setTransactions(prev => {
+            // Cek apakah ID sudah ada di database (Berarti Edit)
+            const isEditing = prev.some(tx => tx.id === savedTx.id);
+            
+            if (isEditing) {
+                // MODE EDIT
+                return prev.map(tx => tx.id === savedTx.id ? savedTx : tx);
+            } else {
+                // MODE TAMBAH
+                return [savedTx, ...prev];
+            }
+        });
+    };
+
+    // 👇 Dari handleDeleteTransaction kamu
+    const deleteTransaction = (id) => {
+        setTransactions(prev => prev.filter(tx => tx.id !== id));
+    };
+
+    return { tx, saveTransaction, deleteTransaction };
+}
