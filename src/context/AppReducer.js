@@ -23,7 +23,7 @@ export const getPastMonths = () => {
         const value = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}`;
         
         // Label untuk tampilan user (Format Indonesia -> "Februari 2026")
-        const label = d.toLocaleDateString('id-ID', { month: 'long', year: 'numeric' });
+        const label = d.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
         
         months.push({ value, label });
     }
