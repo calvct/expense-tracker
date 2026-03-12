@@ -1,5 +1,5 @@
 import '../style/Balance.css'
-import { getPastMonths } from '../context/AppReducer.js'; // Pastikan kamu buat fungsi ini di utils/dateUtils.js
+import { getPastMonths, formatRupiah } from '../context/AppReducer.js'; // Pastikan kamu buat fungsi ini di utils/dateUtils.js
 // 1. Fungsi penolong untuk membuat daftar 12 bulan terakhir secara otomatis
 
 
@@ -17,12 +17,6 @@ function Balance({ selectedMonth, handleMonthChange, transactions }) {
     
     const daysInMonth = new Date(parseInt(selectedMonth.slice(0, 4)), parseInt(selectedMonth.slice(5)) , 0).getDate();
     const dailyAverage = totalExpense / daysInMonth;
-
-     // Format angka ke Rupiah
-    const formatRupiah = (number) => {
-        return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(number);
-    };
-
 
     const formattedExpense = formatRupiah(totalExpense);
     const formattedDailyAverage = formatRupiah(dailyAverage);  

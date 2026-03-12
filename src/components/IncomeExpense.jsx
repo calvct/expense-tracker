@@ -4,6 +4,7 @@ import etcIcon from '../assets/Etc.svg'
 import shoppingIcon from '../assets/Shopping.svg'
 import transportationIcon from '../assets/Transportation.svg'
 import entertainmentIcon from '../assets/Entertainment.svg'
+import { formatRupiah } from '../context/AppReducer.js'; // Pastikan kamu buat fungsi ini di utils/formatUtils.js
 
 function IncomeExpense({selectedMonth, transactions}){
    const categoryTotal = transactions.reduce((acc, tx) => {
@@ -23,9 +24,6 @@ function IncomeExpense({selectedMonth, transactions}){
         { id: 4, name: 'Entertainment', amount: categoryTotal['entertainment'] || 0, icon: entertainmentIcon },
         { id: 5, name: 'Etc', amount: categoryTotal['etc'] || 0, icon: etcIcon },
     ].map(item => ({ ...item, amount: Math.abs(item.amount) })); // Pastikan semua amount positif untuk summary
-   const formatRupiah = (number) => {
-        return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(number);
-    }
     const totalAmount = categoryData.reduce((acc, curr) => acc + curr.amount, 0);
    return(
  <div className='summary-container'>

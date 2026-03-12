@@ -1,4 +1,4 @@
-import '../style/incomeExpenseChart.css'
+import '../style/IncomeExpenseChart.css'
 
 function IncomeExpenseChart() {
     return (
